@@ -10,13 +10,11 @@ def read_json(file_path):
 
 #Part B
 def read_all_json_files(file_path):
-    list_of_json_file = []
-    for files in os.walk(file_path):
-        for json_file in files:
-            if json_file.endswith('.json'):
-                file_along_path = read_json(os.path.join(file_path, json_file))
-                file_along_path.append(list_of_json_file)
-    return list_of_json_file
+    for root, dirs, files in os.walk(file_path):
+        for file in files:
+            if file.endswith('.json'):
+                print(file)
+read_all_json_files('/Users/Thina/Desktop/Python/PythonFundamentals.Exercises.Part9')
 
 #Part C
 def write_pickle(file_path):
